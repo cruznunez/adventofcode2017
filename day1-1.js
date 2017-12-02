@@ -1,9 +1,10 @@
 // we have to pass in the number as a string for larger numbers
 function captcha(string) {
+  string = string + string[0]
   var array = string.split('')
   var sum = 0
   array.forEach(function(str, index) {
-    if (str == array[(index + 1) % array.length]) {
+    if (str == array[index + 1]) {
       sum += parseInt(str)
     }
   })

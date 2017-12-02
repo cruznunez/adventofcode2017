@@ -1,9 +1,10 @@
 def captcha(num)
   string = num.to_s
+  string = string + string[0]
   array = string.split ''
   sum = 0
   array.each_with_index do |str, index|
-    if str == array[(index + 1) % array.size]
+    if str == array[index + 1]
       sum += str.to_i
     end
   end
